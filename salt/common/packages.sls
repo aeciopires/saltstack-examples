@@ -1,6 +1,6 @@
+# State Name: common_packages
+# Goal: install bellow packages
 common_packages:
   pkg.installed:
     - pkgs:
-      - htop
-      - strace
-      - vim
+      - {{ pillar['package_name'] }}

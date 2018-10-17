@@ -1,6 +1,8 @@
 base:
+  # Configuration for all minions
   '*':
     - common
+  # Install MySQL, Apache, PHP e Zabbix Agent e Zabbix Server in host minion1
   'minion1':
     - zabbix.agent.repo
     - zabbix.agent.conf
@@ -24,5 +26,6 @@ base:
 
     - zabbix.frontend.repo
     - zabbix.frontend.conf
+  # Install Apache in host minion2
   'minion2':
     - websetup
