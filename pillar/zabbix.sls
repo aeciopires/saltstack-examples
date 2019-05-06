@@ -1,14 +1,14 @@
 zabbix:
   # Overrides map.jinja
   lookup:
-    version_repo: 4.0
+    version_repo: 4.2
     agent:
-      version: '1:4.0.*'
+      version: '1:4.2.*'
     frontend:
-      version: '1:4.0.*'
+      version: '1:4.2.*'
       dbtype: MYSQL
     server:
-      version: '1:4.0.*'
+      version: '1:4.2.*'
       pkgs:
         - zabbix-server-mysql
         - zabbix-get
@@ -40,7 +40,7 @@ zabbix-agent:
   # Or multiple "Include" options
   includes:
     - /etc/zabbix/zabbix_agentd.d/
-    - /some/custom/location/
+    #- /some/custom/location/
   userparameters:
     - net.ping[*],/usr/bin/fping -q -c3 $1 2>&1 | sed 's,.*/\([0-9.]*\)/.*,\1,'
     - custom.vfs.dev.discovery,/usr/local/bin/dev-discovery.sh
@@ -68,6 +68,14 @@ zabbix-mysql:
   #dbroot_user: 'root'
   #dbroot_pass: 'rootpass'
 
+mysql:
+  server:
+    # Use this account for database admin (defaults to root)
+    root_user: 'root'
+    # root_password: '' - to have root@localhost without password
+    root_password: 'somepass'
+    root_password_hash: '*13883BDDBE566ECECC0501CDE9B293303116521A'
+
 zabbix-frontend:
   dbtype: MYSQL
   dbhost: localhost
@@ -94,5 +102,4 @@ zabbix-proxy:
   dbname: /var/lib/zabbix/zabbix_proxy.db
   dbuser: zabbix
   include: /etc/zabbix/zabbix_proxy.d/
-
 

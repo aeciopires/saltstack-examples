@@ -1,8 +1,10 @@
 # vim: sts=2 ts=2 sw=2 et ai
 #
 mysql:
-  serverpkg: mysql-server
-  clientpkg: mysql-client
+  #serverpkg: mysql-server
+  #clientpkg: mysql-client
+  serverpkg: mariadb-server
+  clientpkg: mariadb-client
   service: mysql
   pythonpkg: python-mysqldb
   devpkg: mysql-devel
@@ -20,6 +22,9 @@ mysql:
         socket: /var/run/mysqld/mysqld.sock
         port: 3306
         datadir: /var/lib/mysql
+    apparmor:
+      dir: /etc/apparmor.d/local
+      file: usr.sbin.mysqld
 
   macos:
     userhomes: /Users

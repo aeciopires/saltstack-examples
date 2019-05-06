@@ -13,6 +13,10 @@ base:
     - mysql.server
     - mysql.client
     - zabbix.mysql.conf
+      # Devido a bug reportado neste ticket: 
+      # https://github.com/saltstack-formulas/zabbix-formula/issues/99
+      # a linha a seguir deve ser comentada na primeira vez e descomentada
+      # na segunda vez em diante
     - zabbix.mysql.schema
 
     - zabbix.server.repo

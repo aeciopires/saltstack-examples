@@ -6,5 +6,5 @@ network_file:
     - template: jinja
     - mode: 644
     - context:
-      ipaddress: {{ grains['ip_interfaces']['eth1'][0] }}
+      ipaddress: {{ grains['ip_interfaces']['enp0s8'][0] }}
       location: {{ grains['fqdn'][3:6] }}

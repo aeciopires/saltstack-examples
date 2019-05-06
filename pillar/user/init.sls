@@ -1,9 +1,9 @@
 # User metadata
 devops_user:
-  name: aecio
-  password: "$1$btNz770d$2ft5ftLx3U8DXOvoJH7pT1"
+  name: teste
+  password: "$6$yP.YPo8o$sY8L1iXM/oyc8srP0T5LAPpTpa1pBFNk7uzu2coxBzfAFcBw6IFwLGmxGZSIR4Gcrglpx.XqJR1WFR5f.VQAa."
   uid: 10001
-  comment: "Aecio Pires"
+  comment: "User teste"
 
 devops_user_list:
   pernalonga:
