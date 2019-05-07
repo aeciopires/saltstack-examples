@@ -63,7 +63,10 @@ Os comandos a seguir devem ser executados para aplicar o estado desejado nos hos
 
 ```bash
 sudo su
-salt '*' state.highstate
+salt-key -L
+salt-key -a minion1
+salt '*' saltutil.refresh_pillar
+salt 'minion1' state.apply
 ```
 Bons testes!
 
@@ -118,7 +121,10 @@ The following commands must be executed to apply the desired state to the hosts.
 
 ```bash
 sudo su
-salt '*' state.highstate
+salt-key -L
+salt-key -a minion1
+salt '*' saltutil.refresh_pillar
+salt 'minion1' state.apply
 ```
 
 Good tests!
